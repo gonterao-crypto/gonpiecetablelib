@@ -34,6 +34,7 @@ class gonpiecetable {
 
         gonpiecetable& operator+=(std::string str);
         void insert(int index, std::string& str);
+        void backspace(int index);
     private:
         std::vector<gonpiece> pieces;
         std::string constbuf = "";

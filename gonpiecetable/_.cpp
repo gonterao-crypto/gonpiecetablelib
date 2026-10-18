@@ -64,6 +64,38 @@ void gonpiecetable::insert(int index, std::string& str) {
     }
 }
 
+void gonpiecetable::backspace(int index) {
+    int l = 0;
+    int i = 0;
+    while (l < index && i < pieces.size()) {
+        l += pieces[i].length;
+        ++i;
+    }
+    if (index == l) {
+        gonpiece& h = pieces[i - 1];
+        h.length -= 1;
+    } else {
+        int sa = index - l;
+        std::cout << index << "a" << i << "b" << l << std::endl;
+        gonpiece& h = pieces[i - 1];
+        std::cout << sa << "a" << (-(h.length) + 1) << std::endl;
+        if (sa == -(h.length) + 1) {
+            std::cout << "haitta!" << std::endl;
+            h.start += 1;
+            h.length -= 1;
+        } else {
+            gonpiece p;
+            p.type = h.type;
+            p.start = h.length + sa;
+            p.length = -sa;
+            pieces.insert(pieces.begin() + i, p);
+
+            pieces[i - 1].length = pieces[i - 1].length + sa - 1;
+
+        }
+    }
+}
+
 
 
 
