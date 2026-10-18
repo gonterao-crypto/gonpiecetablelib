@@ -76,11 +76,8 @@ void gonpiecetable::backspace(int index) {
         h.length -= 1;
     } else {
         int sa = index - l;
-        std::cout << index << "a" << i << "b" << l << std::endl;
         gonpiece& h = pieces[i - 1];
-        std::cout << sa << "a" << (-(h.length) + 1) << std::endl;
         if (sa == -(h.length) + 1) {
-            std::cout << "haitta!" << std::endl;
             h.start += 1;
             h.length -= 1;
         } else {
