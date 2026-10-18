@@ -1,7 +1,7 @@
 # gonpiecetablelib
 C++のピーステーブルのライブラリ
 
-# サンプルコード
+# サンプルコード　その1
 
 ```cpp
 #include "gonpiecetable/_.hpp"
@@ -47,4 +47,37 @@ a
 w
 a
 
+```
+
+# サンプルコード　その2
+
+```cpp
+#include "gonpiecetable/_.hpp"
+#include <iostream>
+int main() {
+    std::string ahaha = "ahaha";
+    gonpiecetable n(ahaha);
+    n += "awawa";
+    n.backspace(2);
+    for (const auto& e : n) {
+        std::cout << e << std::endl;
+    }
+
+    return 0;
+}
+}
+```
+
+# 結果
+
+```txt
+a
+a
+h
+a
+a
+w
+a
+w
+a
 ```
